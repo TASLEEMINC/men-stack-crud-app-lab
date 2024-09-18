@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Edit Page</title>
+  </head>
+  <body>
+    <h1>Food Edit - <%= Food.name %></h1>
+    <form method="POST" action="/Foods/<%=Food._id%>?_method=PUT">
+      <div>
+        <label for="name">Food Name:</label>
+        <input type="text" name="name" id="name" value="<%= Food.name %>" />
+      </div>
+      <div>
+        <label for="isReadyToEat">Is Ready to Eat:</label>
+        <!-- aria - accessibility standard -->
+        <input type="checkbox" name="isReadyToEat" id="isReadyToEat" <%=
+        Food.isReadyToEat ? "checked" : "" %> />
+      </div>
+
+      <button type="submit">Edit Food</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foods Index Page</title>
+</head>
+
+<body>
+    <h1><%= message %> - All Foods</h1>
+    <ul>
+        <!-- EJS iterator -> loops over the Foods context variable - set inside of res.render( {}) -->
+      <% Food.forEach(Food => { %>
+        <li><a href="/Food/<%= Food._id %>"><%= Food.name %></a></li>
+      <% }); %>
+    </ul>
+
+    <a href="/">Go Back to Homepage</a> | <a href="/Food/new">Add new Food</a>
+  </body>
+  
+</html>
